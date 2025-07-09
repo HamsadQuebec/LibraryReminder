@@ -2,18 +2,22 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-# Copy project file and restore dependencies
+# Copy only the csproj file and restore dependencies
 COPY LibraryEmailReminder.csproj ./
-RUN dotnet restore
+RUN dotnet restore LibraryEmailReminder.csproj
 
-# Copy the rest of the source and build
+# Copy all source files
 COPY . ./
-RUN dotnet publish -c Release -o out
 
-# Runtime image
+# Publish the app
+RUN dotnet publish LibraryEmailReminder.csproj -c Release -o out
+
+# Use .NET 8 runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
+
+# Copy the build output to the runtime image
 COPY --from=build /app/out .
 
-# Start the app
+# Start the application
 ENTRYPOINT ["dotnet", "LibraryEmailReminder.dll"]
