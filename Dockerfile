@@ -1,30 +1,19 @@
-# See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-# Depending on the operating system of the host machines(s) that will build or run the containers, the image specified in the FROM statement may need to be changed.
-# For more information, please see https://aka.ms/containercompat
-
-# This stage is used when running from VS in fast mode (Default for Debug configuration)
-FROM mcr.microsoft.com/dotnet/runtime:8.0-nanoserver-1809 AS base
+# Use .NET 8 SDK image to build the app
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
+# Copy project file and restore dependencies
+COPY LibraryEmailReminder.csproj ./
+RUN dotnet restore
 
-# This stage is used to build the service project
-FROM mcr.microsoft.com/dotnet/sdk:8.0-nanoserver-1809 AS build
-ARG BUILD_CONFIGURATION=Release
-WORKDIR /src
-COPY ["LibraryEmailReminder/LibraryEmailReminder.csproj", "LibraryEmailReminder/"]
-RUN dotnet restore "./LibraryEmailReminder/LibraryEmailReminder.csproj"
-COPY . .
-WORKDIR "/src/LibraryEmailReminder"
-RUN dotnet build "./LibraryEmailReminder.csproj" -c %BUILD_CONFIGURATION% -o /app/build
+# Copy the rest of the source and build
+COPY . ./
+RUN dotnet publish -c Release -o out
 
-# This stage is used to publish the service project to be copied to the final stage
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./LibraryEmailReminder.csproj" -c %BUILD_CONFIGURATION% -o /app/publish /p:UseAppHost=false
-
-# This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
-FROM base AS final
+# Runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app/out .
+
+# Start the app
 ENTRYPOINT ["dotnet", "LibraryEmailReminder.dll"]
