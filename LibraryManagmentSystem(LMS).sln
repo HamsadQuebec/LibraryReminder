@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagmentSystem(LMS)", "LibraryManagmentSystem(LMS)\LibraryManagmentSystem(LMS).csproj", "{693EB871-EB9E-48B5-AEB2-B44CDA9C71B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "C:\Users\Hamsad\source\repos\LibraryProject(LP)\DataAccessLayer\DataAccessLayer.csproj", "{DBF58376-8D35-4E27-BE18-FFDA91566496}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BussinessLayer", "C:\Users\Hamsad\source\repos\LibraryProject(LP)\BussinessLayer\BussinessLayer.csproj", "{38A5F1B2-070C-43BE-8DA8-AA5056A8CB63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassSettings", "C:\Users\Hamsad\source\repos\LibraryProject(LP)\ClassSettings\ClassSettings.csproj", "{27D32FED-2B9C-4815-8DB7-CB7087D79C4B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryEmailReminderWorker", "LibraryEmailReminderWorker\LibraryEmailReminderWorker.csproj", "{1DE7B732-17C0-4FF3-BCF1-635BE9A89106}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryEmailReminder", "LibraryEmailReminder\LibraryEmailReminder.csproj", "{FFC17321-4C26-4765-8D1F-7DA9631FE2DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{693EB871-EB9E-48B5-AEB2-B44CDA9C71B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{693EB871-EB9E-48B5-AEB2-B44CDA9C71B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{693EB871-EB9E-48B5-AEB2-B44CDA9C71B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{693EB871-EB9E-48B5-AEB2-B44CDA9C71B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBF58376-8D35-4E27-BE18-FFDA91566496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBF58376-8D35-4E27-BE18-FFDA91566496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBF58376-8D35-4E27-BE18-FFDA91566496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBF58376-8D35-4E27-BE18-FFDA91566496}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38A5F1B2-070C-43BE-8DA8-AA5056A8CB63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38A5F1B2-070C-43BE-8DA8-AA5056A8CB63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38A5F1B2-070C-43BE-8DA8-AA5056A8CB63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38A5F1B2-070C-43BE-8DA8-AA5056A8CB63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27D32FED-2B9C-4815-8DB7-CB7087D79C4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27D32FED-2B9C-4815-8DB7-CB7087D79C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27D32FED-2B9C-4815-8DB7-CB7087D79C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27D32FED-2B9C-4815-8DB7-CB7087D79C4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DE7B732-17C0-4FF3-BCF1-635BE9A89106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DE7B732-17C0-4FF3-BCF1-635BE9A89106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DE7B732-17C0-4FF3-BCF1-635BE9A89106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DE7B732-17C0-4FF3-BCF1-635BE9A89106}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFC17321-4C26-4765-8D1F-7DA9631FE2DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFC17321-4C26-4765-8D1F-7DA9631FE2DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFC17321-4C26-4765-8D1F-7DA9631FE2DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFC17321-4C26-4765-8D1F-7DA9631FE2DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {889D5842-34C6-45FC-96EE-C890891A0D51}
+	EndGlobalSection
+EndGlobal
